@@ -1,0 +1,14 @@
+// #cgo CXXFLAGS: -std=c++11
+// #cgo pkg-config: opencv
+
+%module refineimg
+
+%include "std_vector.i"
+
+namespace std {
+   %template(ByteVector) vector<unsigned char>;
+}
+
+%inline %{
+std::vector<unsigned char> refine(const std::vector<unsigned char>& img);
+%}
