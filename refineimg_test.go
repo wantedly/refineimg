@@ -16,7 +16,7 @@ func TestPerform(t *testing.T) {
 	if err != nil {
 		log.Fatal(err)
 	}
-	output := Refine(input)
+	output := RefineImg(input)
 	outBase64 := base64.StdEncoding.EncodeToString(output)
 	fmt.Println(outBase64)
 }
