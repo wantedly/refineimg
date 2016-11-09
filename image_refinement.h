@@ -1,8 +1,12 @@
 #ifndef YASHMA_IMAGE_REFINEMENT_H_
 #define YASHMA_IMAGE_REFINEMENT_H_
 
-#include <vector>
+#include <opencv2/core.hpp>
 
-std::vector<unsigned char> refine(const std::vector<unsigned char>& img);
+namespace imgutil {
+
+cv::Mat refine(const cv::Mat& img, cv::Mat* hist_image = NULL);
+
+}
 
 #endif // YASHMA_IMAGE_REFINEMENT_H_

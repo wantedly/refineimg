@@ -1,9 +1,7 @@
 #include "image_refinement.h"
 #include <cmath>
 #include <algorithm>
-#include <opencv2/core.hpp>
 #include <opencv2/opencv.hpp>
-#include <opencv2/highgui.hpp>
 
 using namespace std;
 
@@ -86,12 +84,4 @@ cv::Mat refine(const cv::Mat& src, cv::Mat* hist_image) {
   return dst;
 }
 
-}
-
-std::vector<unsigned char> refine(const std::vector<unsigned char>& img) {
-  cv::Mat src = cv::imdecode(img, cv::IMREAD_COLOR);
-  cv::Mat dst = imgutil::refine(src, NULL);
-  std::vector<unsigned char> out;
-  cv::imencode(".webp", dst, out);
-  return out;
 }
