@@ -1,6 +1,3 @@
-// #cgo CXXFLAGS: -std=c++11
-// #cgo pkg-config: opencv
-
 %module refineimg
 
 %include "std_vector.i"
