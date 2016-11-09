@@ -4,16 +4,16 @@ package refineimg
 // #cgo pkg-config: opencv
 import "C"
 
-func RefineImg(img []byte) []byte {
-  bv := NewByteVector()
-  for _, b := range img {
-    bv.Add(b)
-  }
-  outBv := Refine(bv)
-  n := int(outBv.Size())
-  out := make([]byte, n)
-  for i := 0; i < n; i++ {
-    out[i] = outBv.Get(i)
-  }
-  return out
+func Perform(img []byte) []byte {
+	bv := NewByteVector()
+	for _, b := range img {
+		bv.Add(b)
+	}
+	outBv := Refine(bv)
+	n := int(outBv.Size())
+	out := make([]byte, n)
+	for i := 0; i < n; i++ {
+		out[i] = outBv.Get(i)
+	}
+	return out
 }
