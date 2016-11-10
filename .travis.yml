@@ -4,11 +4,9 @@ go:
   - 1.6
   - master
 
-before_install:
+before_script:
   - sudo apt-get -qq update
   - sudo apt-get install -y libopencv-dev libopencv-core-dev libopencv-imgproc-dev libopencv-highgui-dev
-
-before_script:
   - wget http://jaist.dl.sourceforge.net/project/opencvlibrary/opencv-unix/2.4.13/opencv-2.4.13.zip
   - unzip opencv-2.4.13.zip
   - cd opencv-2.4.13
