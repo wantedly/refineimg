@@ -1,7 +1,7 @@
 #ifndef YASHMA_IMAGE_REFINEMENT_H_
 #define YASHMA_IMAGE_REFINEMENT_H_
 
-#include <opencv2/core.hpp>
+#include <opencv2/opencv.hpp>
 
 namespace imgutil {
 
