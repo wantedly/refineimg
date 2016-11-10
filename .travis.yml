@@ -7,7 +7,7 @@ go:
 before_install:
   - sudo apt-get -qq update
   - sudo apt-get install -y libopencv-dev libopencv-core-dev libopencv-imgproc-dev libopencv-highgui-dev
-
+  - sudo ls -lt /usr/local/lib/pkgconfig
 script:
   - ! gofmt -d *.go 2>&1 | read
   - go vet
