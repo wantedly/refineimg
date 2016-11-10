@@ -1,0 +1,9 @@
+language: go
+
+go:
+  - 1.6
+  - master
+
+before_install:
+  - sudo apt-get -qq update
+  - sudo apt-get install -y libopencv-core-dev libopencv-imgproc-dev libopencv-highgui-dev
