@@ -24,7 +24,8 @@ func TestPerform(t *testing.T) {
 	output := Perform(input)
 	outWebpBase64 := base64.StdEncoding.EncodeToString(output)
 	if outWebpBase64 != ansWebpBase64 {
-		t.Error("args")
+		t.Error("output is not as expected:")
+		t.Error(outWebpBase64)
 		img, err := webp.Decode(bytes.NewReader(output))
 		if err != nil {
 			log.Fatal(err)

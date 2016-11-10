@@ -1,0 +1,14 @@
+language: go
+
+go:
+  - 1.6
+  - master
+
+before_install:
+  - sudo apt-get -qq update
+  - sudo apt-get install -y libopencv-dev
+
+script:
+  - ! gofmt -d *.go 2>&1 | read
+  - go vet
+  - go test -v

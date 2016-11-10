@@ -1,7 +1,6 @@
 #include "image_refinement.h"
 #include <cmath>
 #include <algorithm>
-#include <opencv2/opencv.hpp>
 
 using namespace std;
 
