@@ -16,6 +16,7 @@ before_install:
   - make all -j4
   - sudo make install
   - sudo ldconfig
+  - cd $TRAVIS_BUILD_DIR
   - rm -rf opencv-3.1.0
   - rm -rf 3.1.0.zip
 
