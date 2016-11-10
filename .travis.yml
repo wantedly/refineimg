@@ -14,8 +14,8 @@ before_install:
   - cd release
   - cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D BUILD_SHARED_LIBS=ON ..
   - make all -j4
-  - make install
-  - ldconfig
+  - sudo make install
+  - sudo ldconfig
   - rm -rf /opencv-2.4.13
   - rm -rf 2.4.13.zip
 
