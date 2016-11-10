@@ -6,6 +6,7 @@ import "C"
 
 func Perform(img []byte) []byte {
 	bv := NewByteVector()
+	bv.Reserve(int64(len(img)))
 	for _, b := range img {
 		bv.Add(b)
 	}
