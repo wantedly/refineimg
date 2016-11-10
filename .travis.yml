@@ -1,8 +1,7 @@
 language: go
 
 go:
-  - 1.6
-  - master
+  - 1.7
 
 before_install:
   - sudo apt-get -qq update
