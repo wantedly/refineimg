@@ -7,17 +7,17 @@ go:
 before_install:
   - sudo apt-get -qq update
   - sudo apt-get install -y libopencv-dev libopencv-core-dev libopencv-imgproc-dev libopencv-highgui-dev
-  - wget http://jaist.dl.sourceforge.net/project/opencvlibrary/opencv-unix/2.4.13/opencv-2.4.13.zip
-  - unzip opencv-2.4.13.zip
-  - cd opencv-2.4.13
+  - wget http://jaist.dl.sourceforge.net/project/opencvlibrary/opencv-unix/3.1.0/opencv-3.1.0.zip
+  - unzip opencv-3.1.0.zip
+  - cd opencv-3.1.0
   - mkdir release
   - cd release
   - cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D BUILD_SHARED_LIBS=ON ..
   - make all -j4
   - sudo make install
   - sudo ldconfig
-  - rm -rf /opencv-2.4.13
-  - rm -rf 2.4.13.zip
+  - rm -rf /opencv-3.1.0
+  - rm -rf 3.1.0.zip
 
 script:
   - ! gofmt -d *.go 2>&1 | read
