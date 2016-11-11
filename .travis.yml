@@ -5,7 +5,7 @@ go:
 
 before_install:
   - wget http://jaist.dl.sourceforge.net/project/opencvlibrary/opencv-unix/3.1.0/opencv-3.1.0.zip
-  - unzip opencv-3.1.0.zip
+  - unzip -q opencv-3.1.0.zip
   - cd opencv-3.1.0
   - mkdir release
   - cd release
