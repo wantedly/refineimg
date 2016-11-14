@@ -5,12 +5,12 @@ go:
 
 before_install:
   - wget http://jaist.dl.sourceforge.net/project/opencvlibrary/opencv-unix/3.1.0/opencv-3.1.0.zip
-  - unzip opencv-3.1.0.zip
+  - unzip -q opencv-3.1.0.zip
   - cd opencv-3.1.0
   - mkdir release
   - cd release
   - cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D BUILD_SHARED_LIBS=ON ..
-  - make all -j4
+  - make all -j4 --silent
   - sudo make install
   - sudo ldconfig
   - cd $TRAVIS_BUILD_DIR
