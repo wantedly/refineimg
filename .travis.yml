@@ -9,9 +9,9 @@ before_install:
   - cd opencv-3.1.0
   - mkdir release
   - cd release
-  - cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D BUILD_SHARED_LIBS=ON ..
-  - make all -j4 --silent
-  - sudo make install
+  - cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D BUILD_SHARED_LIBS=ON .. 1>/dev/null
+  - make all -j4 1>/dev/null
+  - sudo make install 1>/dev/null
   - sudo ldconfig
   - cd $TRAVIS_BUILD_DIR
   - rm -rf opencv-3.1.0
