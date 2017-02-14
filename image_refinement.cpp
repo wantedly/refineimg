@@ -9,9 +9,16 @@ namespace imgutil {
 
 // cf. http://docs.opencv.org/2.4/doc/tutorials/imgproc/histograms/histogram_calculation/histogram_calculation.html
 cv::Mat refine(const cv::Mat& src, cv::Mat* hist_image) {
-  const int pixels = src.rows * src.cols;
+  // drop alpha channel
+  cv::Mat srcWithoutAlpha;
+  if (src.channels() == 4)
+    cv::cvtColor(src, srcWithoutAlpha, cv::COLOR_BGRA2BGR);
+  else
+    srcWithoutAlpha = src;
+
+  const int pixels = srcWithoutAlpha.rows * srcWithoutAlpha.cols;
   vector<cv::Mat> bgr_planes;
-  cv::split(src, bgr_planes);
+  cv::split(srcWithoutAlpha, bgr_planes);
   int histSize = 256;
 
   /// Set the ranges (for B,G,R))
@@ -63,7 +70,7 @@ cv::Mat refine(const cv::Mat& src, cv::Mat* hist_image) {
     }
   }
   cv::Mat dst;
-  cv::LUT(src, lut, dst);
+  cv::LUT(srcWithoutAlpha, lut, dst);
 
   cv::Mat hsv;
   cv::cvtColor(dst, hsv, CV_BGR2HSV);
